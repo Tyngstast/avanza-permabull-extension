@@ -1,0 +1,19 @@
+{
+  "name": "Avanza Permabull",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Never again will you see red numbers on your Avanza account.",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": [
+        "*://*.avanza.se/*"
+      ],
+      "js": [
+        "lib/jquery-3.4.1.min.js",
+        "script.js"
+      ]
+    }
+  ]
+}
