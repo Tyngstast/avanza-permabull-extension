@@ -1,12 +1,7 @@
 $(document).ready(function() {
 
-    const oldHoldingsPageHandler = setInterval(function() {
+    setInterval(function() {
         const negatives = $('.negative');
-        const neutrals = $('.neutral');
-
-        if (negatives.length === 0 && neutrals.length === 0) {
-            clearInterval(oldHoldingsPageHandler);
-        }
 
         negatives.addClass('positive');
         negatives.removeClass('negative');
@@ -16,12 +11,8 @@ $(document).ready(function() {
         });
     }, 100);
 
-    const newHoldingsPageHandler = setInterval(function() {
+    setInterval(function() {
         const negatives = $('.is-negative');
-
-        if (negatives.length === 0) {
-            clearInterval(newHoldingsPageHandler);
-        }
 
         negatives.addClass('is-positive');
         negatives.removeClass('is-negative');
@@ -30,6 +21,6 @@ $(document).ready(function() {
             negative.innerHTML = negative.innerHTML.replace('−', '+');
             negative.innerHTML = negative.innerHTML.replace('-', '+');
         });
-    }, 1000);
+    }, 100);
 
 });
